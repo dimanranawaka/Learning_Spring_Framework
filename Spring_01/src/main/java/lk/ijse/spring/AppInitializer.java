@@ -35,6 +35,17 @@ public class AppInitializer {
 
         basicDataSource.getName();
 
+
+        // Context Invocation : Using Bean ID
+
+        // Customer -> customer (beanID)
+
+        Customer customer = (Customer) ctx.getBean("customer");
+
+        System.out.println(customer);
+
+
+
         ctx.close();
     }
 }
