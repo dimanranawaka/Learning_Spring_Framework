@@ -38,7 +38,7 @@ public class AppInitializer {
 
         // Context Invocation : Using Bean ID
 
-        // Customer -> customer (beanID)
+        // Customer -> customer (beanID) get the class name and then convert the first letter into simple letter
 
         Customer customer = (Customer) ctx.getBean("customer");
 
