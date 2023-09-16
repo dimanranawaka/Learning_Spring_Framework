@@ -44,28 +44,19 @@ public class AppInitializer {
 
         System.out.println(customer);
 
-
-
-        ctx.close();
-
-        // Calling bean after closing the context
-
         Customer bean = ctx.getBean(Customer.class);
 
         bean.getCustomerName();
 
-        // Exception Occurred
+        // Hooking Processes
 
-        /*
-
-         Exception in thread "main" java.lang.IllegalStateException:
-         org.springframework.context.annotation.AnnotationConfigApplicationContext@6e8cf4c6 has been closed already
-	     at org.springframework.context.support.AbstractApplicationContext.assertBeanFactoryActive
-	     (AbstractApplicationContext.java:1141)
-	     at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1174)
-	     at lk.ijse.spring.AppInitializer.main(AppInitializer.java:53)
-
-         */
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ctx.close();
+                System.out.println("Context is closed!");
+            }
+        }));
 
 
     }
