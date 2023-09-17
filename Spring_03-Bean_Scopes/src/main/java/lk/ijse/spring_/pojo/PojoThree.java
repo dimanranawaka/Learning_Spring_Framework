@@ -28,6 +28,7 @@ public class PojoThree implements BeanNameAware, BeanFactoryAware, ApplicationCo
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("PojoThree : Initializing Bean ");
+        System.out.println("===========================");
     }
 
     @Override

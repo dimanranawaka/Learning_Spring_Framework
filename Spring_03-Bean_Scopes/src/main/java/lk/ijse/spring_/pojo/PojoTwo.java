@@ -32,6 +32,7 @@ public class PojoTwo implements BeanNameAware, BeanFactoryAware, ApplicationCont
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("PojoTwo : Initializing Bean ");
+        System.out.println("===========================");
     }
 
     @Override

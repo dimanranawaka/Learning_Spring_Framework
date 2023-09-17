@@ -19,10 +19,12 @@ public class AppInitializer {
         // Requesting different types of objects using @Scope(used in PojoOne.class)
 
         PojoOne bean1 = ctx.getBean(PojoOne.class);
-        PojoOne bean2 = ctx.getBean(PojoOne.class);
+        //PojoOne bean2 = ctx.getBean(PojoOne.class);
 
         System.out.println(bean1);
-        System.out.println(bean2);
+        //System.out.println(bean2);
+
+        System.out.println("===========================");
 
     }
 }

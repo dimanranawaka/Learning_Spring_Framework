@@ -33,6 +33,7 @@ public class PojoOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("PojoOne : Initializing Bean");
+        System.out.println("===========================");
     }
     // Disposable Bean
     @Override
