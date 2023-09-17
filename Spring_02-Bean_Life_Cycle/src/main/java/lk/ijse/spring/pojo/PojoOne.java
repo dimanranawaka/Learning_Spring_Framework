@@ -14,7 +14,7 @@ public class PojoOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
     public PojoOne() {
         System.out.println("PojoOne : Instantiated");
     }
-    // Set the bean name
+    // Set the Bean name
     @Override
     public void setBeanName(String name) {
         System.out.println("PojoOne : Bean Name Awareness : "+name);
@@ -29,7 +29,7 @@ public class PojoOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("PojoOne : Application Context Awareness");
     }
-
+    // Bean is Full Ready
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("PojoOne : Initializing Bean");
