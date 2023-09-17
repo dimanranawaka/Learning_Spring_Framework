@@ -36,6 +36,18 @@ public class AppInitializer {
         basicDataSource.getName();
 
 
+        // Hooking Processes
+
+        /*Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ctx.close();
+                System.out.println("Context is closed!");
+            }
+        }));*/
+
+        ctx.registerShutdownHook();
+
         // Context Invocation : Using Bean ID
 
         // Customer -> customer (beanID) get the class name and then convert the first letter into simple letter
@@ -47,16 +59,6 @@ public class AppInitializer {
         Customer bean = ctx.getBean(Customer.class);
 
         bean.getCustomerName();
-
-        // Hooking Processes
-
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                ctx.close();
-                System.out.println("Context is closed!");
-            }
-        }));
 
 
     }
