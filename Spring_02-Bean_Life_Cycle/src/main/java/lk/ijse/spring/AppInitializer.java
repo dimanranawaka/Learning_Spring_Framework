@@ -10,7 +10,11 @@ public class AppInitializer {
 
         context.register(AppConfig.class);
         context.refresh();
-        context.close();
+
+        /* Disposable Beans state only works when container closing */
+
+//        context.close();
+//        context.registerShutdownHook();
 
     }
 }
