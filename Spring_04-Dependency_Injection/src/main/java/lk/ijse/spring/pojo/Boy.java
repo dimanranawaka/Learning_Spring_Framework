@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class Boy {
     @Autowired
-    GoodGirl girlTwo;
+    GoodGirl girl;
     public Boy() {
         System.out.println("Boy : Instantiated");
     }
     public void chatWithGirl(){
         // Girl girl = new Girl(); This is wrong in Spring Framework
-        girlTwo.chat();
+        girl.chat();
     }
 
 }
