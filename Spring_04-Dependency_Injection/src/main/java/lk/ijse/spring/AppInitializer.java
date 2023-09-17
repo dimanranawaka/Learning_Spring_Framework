@@ -24,5 +24,11 @@ public class AppInitializer {
         Girl : Instantiated  : Created by the Container
         Girl : Instantiated  : Created by me inside chatWithGirl() method
         Hi, Handsome!*/
+
+        // After , using @Autowired Annotation
+
+        /*Boy : Instantiated
+        Girl : Instantiated
+        Hi, Handsome!*/
     }
 }
