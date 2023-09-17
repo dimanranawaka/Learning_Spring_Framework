@@ -46,7 +46,7 @@ public class AppInitializer {
             }
         }));*/
 
-        ctx.registerShutdownHook();
+        ctx.registerShutdownHook(); // this method can invoke instead of using above code
 
         // Context Invocation : Using Bean ID
 
