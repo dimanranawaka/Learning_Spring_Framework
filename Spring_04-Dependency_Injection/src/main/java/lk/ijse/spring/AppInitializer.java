@@ -2,6 +2,7 @@ package lk.ijse.spring;
 
 
 import lk.ijse.spring.config.AppConfig;
+import lk.ijse.spring.di.A;
 import lk.ijse.spring.pojo.Boy;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,9 +17,9 @@ public class AppInitializer {
 
         ctx.registerShutdownHook();
 
-        Boy boy = ctx.getBean(Boy.class);
+        /*Boy boy = ctx.getBean(Boy.class);
 
-        boy.chatWithGirl();
+        boy.chatWithGirl();*/
 
         /*Boy : Instantiated : Created By the Container
         Girl : Instantiated  : Created by the Container
@@ -30,5 +31,10 @@ public class AppInitializer {
         /*Boy : Instantiated
         Girl : Instantiated
         Hi, Handsome!*/
+
+        A bean = ctx.getBean(A.class);
+
+        bean.test();
+
     }
 }
