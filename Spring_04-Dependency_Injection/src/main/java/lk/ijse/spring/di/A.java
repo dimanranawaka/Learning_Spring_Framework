@@ -10,12 +10,17 @@ public class A {
     /*@Autowired*/
     SuperB superB; // Property Injection
     //Constructor Injection
-    @Autowired
+    /*@Autowired*/
     public A(SuperB superB) {
 
         //Constructor Injection : If some Dependency is injecting through constructor it is called "Constructor Injection"
-        this.superB = superB;
+//        this.superB = superB;
         System.out.println("A : Instantiated");
+    }
+    // Setter Method Injection
+    @Autowired
+    public void setInjection(SuperB superB){
+        this.superB = superB;
     }
     public void test(){
         superB.methodUseByA();
