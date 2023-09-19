@@ -10,6 +10,7 @@ public class A {
     /*@Autowired*/
     SuperB superB; // Property Injection
     //Constructor Injection
+    @Autowired
     public A(SuperB superB) {
 
         //Constructor Injection : If some Dependency is injecting through constructor it is called "Constructor Injection"
