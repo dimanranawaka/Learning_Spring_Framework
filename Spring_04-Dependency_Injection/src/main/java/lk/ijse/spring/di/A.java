@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Constructor;
 
 @Component
-public class A {
+public class A implements DI{
     /*@Autowired*/
     SuperB superB; // Property Injection
     //Constructor Injection
@@ -18,11 +18,18 @@ public class A {
         System.out.println("A : Instantiated");
     }
     // Setter Method Injection
-    @Autowired
+    /*@Autowired*/
     public void setInjection(SuperB superB){
-        this.superB = superB;
+        /*this.superB = superB;*/
     }
     public void test(){
         superB.methodUseByA();
+    }
+
+    /* Interface through Injections */
+    @Autowired
+    @Override
+    public void inject(SuperB superB) {
+        this.superB = superB;
     }
 }
