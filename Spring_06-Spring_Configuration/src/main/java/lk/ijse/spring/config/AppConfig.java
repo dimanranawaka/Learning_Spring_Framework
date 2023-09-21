@@ -1,5 +1,7 @@
 package lk.ijse.spring.config;
 
+import lk.ijse.spring.pojo.PojoOne;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,5 +10,9 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     public AppConfig() {
         System.out.println("AppConfig : Instantiated");
+    }
+    @Bean
+    public PojoOne pojoOne(){
+        return new PojoOne();
     }
 }
