@@ -13,7 +13,9 @@ public class AppInitializer {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 
-        // Configuration Class One
+        // First Method : registering all config classes separately
+
+       /* // Configuration Class One
         ctx.register(AppConfig.class);
         ctx.refresh();
         PojoOne pojoOne = ctx.getBean(PojoOne.class);
@@ -27,8 +29,12 @@ public class AppInitializer {
         // Configuration Class Three
         ctx.register(ConfigTwo.class);
         PojoThree pojoThree = ctx.getBean(PojoThree.class);
-        System.out.println(pojoThree);
+        System.out.println(pojoThree);*/
 
+        // Second-Method : using @Import Annotation in AppConfig class to import other config classes
+
+        ctx.register(AppConfig.class);
+        ctx.refresh();
 
         ctx.registerShutdownHook();
 
