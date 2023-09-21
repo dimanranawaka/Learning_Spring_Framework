@@ -14,6 +14,9 @@ public class AppConfig {
     }
     @Bean
     public PojoTwo pojoTwo(){
+        // Inter-Bean Dependencies Invocation
+        PojoThree pojoThree = pojoThree();
+        System.out.println(pojoThree);
         return new PojoTwo();
     }
     @Bean
