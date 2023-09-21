@@ -1,5 +1,6 @@
 package lk.ijse.spring.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -10,13 +11,16 @@ public class Customer {
     /*public Customer(@Value("IJSE")String name) {
         System.out.println("Customer : Instantiated ");
     }*/
-
-    public Customer(@Value("10,20,30,40") String names []) {
+    @Autowired
+    public Customer(@Value("Dasun,Hansaka,Ravindu,Sanchana") String names []) {
         System.out.println("Customer : Instantiated ");
-        for (String a:
+        for (String name:
              names) {
-            System.out.println(a);
+            System.out.println(name);
         }
+    }
+    public Customer(@Value("Diman") String name) {
+        System.out.println("Customer : Instantiated :"+name);
     }
 
     //What you can assign with @Value Annotation
