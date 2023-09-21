@@ -11,8 +11,8 @@ public class AppConfig {
     public AppConfig() {
         System.out.println("AppConfig : Instantiated");
     }
-    @Bean
+    /*@Bean
     public PojoOne pojoOne(){
         return new PojoOne();
-    }
+    }*/
 }
