@@ -4,6 +4,7 @@ import lk.ijse.spring.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Map;
+import java.util.Properties;
 
 public class AppInitializer {
     public static void main(String[] args) {
@@ -21,6 +22,18 @@ public class AppInitializer {
              getenv.keySet()) {
 
             String value = getenv.get(key);
+            //System.out.println(key+" : "+value);
+
+        }
+
+        // Java Environment Variables
+
+        Properties properties = System.getProperties();
+
+        for (Object key : properties.keySet()) {
+
+            Object value = properties.get(key);
+
             System.out.println(key+" : "+value);
 
         }
