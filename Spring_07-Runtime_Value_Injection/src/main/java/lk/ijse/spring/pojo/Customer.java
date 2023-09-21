@@ -19,7 +19,7 @@ public class Customer {
             System.out.println(name);
         }
     }
-    @Autowired(required = false)
+    @Autowired(required = false)// Here Spring runs the Greedious Constructor
     public Customer(@Value("Diman") String name,@Value("10")int i) {
 
         System.out.println("Customer : Instantiated :"+name+" "+i);
