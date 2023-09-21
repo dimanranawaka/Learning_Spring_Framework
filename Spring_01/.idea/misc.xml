@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/../Spring_05-FullMode_LightMode/pom.xml" />
         <option value="$PROJECT_DIR$/../Spring_06-Spring_Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/../Spring_07-Runtime_Value_Injection/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spring_08-Spring_Environment/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
