@@ -11,7 +11,7 @@ public class Customer {
     /*public Customer(@Value("IJSE")String name) {
         System.out.println("Customer : Instantiated ");
     }*/
-    @Autowired
+    @Autowired(required = false)
     public Customer(@Value("Dasun,Hansaka,Ravindu,Sanchana") String names []) {
         System.out.println("Customer : Instantiated ");
         for (String name:
@@ -19,8 +19,11 @@ public class Customer {
             System.out.println(name);
         }
     }
-    public Customer(@Value("Diman") String name) {
-        System.out.println("Customer : Instantiated :"+name);
+    @Autowired(required = false)
+    public Customer(@Value("Diman") String name,@Value("10")int i) {
+
+        System.out.println("Customer : Instantiated :"+name+" "+i);
+
     }
 
     //What you can assign with @Value Annotation
