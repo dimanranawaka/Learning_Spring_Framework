@@ -10,8 +10,5 @@ public class AppConfig {
     public AppConfig() {
         System.out.println("AppConfig : Instantiated");
     }
-    @Bean
-    public String setName(){
-        return "Hello, Diman!";
-    }
+
 }
