@@ -22,10 +22,10 @@ public class AppInitializer {
              getenv.keySet()) {
 
             String value = getenv.get(key);
-            System.out.println(key+" : "+value);
+           // System.out.println(key+" : "+value);
 
         }
-        System.out.println("=====================");
+       // System.out.println("=====================");
         // Java Environment Variables
 
         Properties properties = System.getProperties();
@@ -34,7 +34,7 @@ public class AppInitializer {
 
             Object value = properties.get(key);
 
-            System.out.println(key+" : "+value);
+           // System.out.println(key+" : "+value);
 
         }
     }
