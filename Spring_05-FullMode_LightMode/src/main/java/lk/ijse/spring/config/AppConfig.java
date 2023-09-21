@@ -14,7 +14,8 @@ public class AppConfig {
     }
     // Full Mode
     // In Full Mode , It satisfied Inter-Bean dependencies
-    @Bean
+
+   /* @Bean
     public PojoTwo pojoTwo(){
         // Inter-Bean Dependencies Invocation
         PojoThree pojoThree1 = pojoThree();
@@ -26,5 +27,7 @@ public class AppConfig {
     @Bean
     public PojoThree pojoThree(){
         return new PojoThree();
-    }
+    }*/
+
+
 }
