@@ -24,6 +24,7 @@ public class AppInitializer {
             String value = getenv.get(key);
            // System.out.println(key+" : "+value);
 
+
         }
        // System.out.println("=====================");
         // Java Environment Variables
