@@ -18,5 +18,6 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"}; // This method is used to map the Servlets
+        // Default mapping of the Default Servlet
     }
 }
