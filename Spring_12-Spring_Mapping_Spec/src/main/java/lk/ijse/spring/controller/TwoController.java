@@ -14,4 +14,9 @@ public class TwoController {
     public String testOne(){
         return "Method One Invoked";
     }
+
+    @GetMapping("/C??DEF")
+    public String testOne1(){
+        return "Method two Invoked";
+    }
 }
