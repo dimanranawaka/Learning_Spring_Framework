@@ -18,8 +18,17 @@ public class OneController {
     public String testTwo(){
         return "Get Method Two Invoke";
     }*/
-    @GetMapping(path = "/id/{C001}/{Diman}")
+
+    /*@GetMapping(path = "/id/{C001}/{Diman}")
     public String testOne(@PathVariable("C001") String id, @PathVariable("Diman") String name){
+        System.out.println(id);
+        System.out.println(name);
+        return "Get Method One Invoke";
+    }*/
+
+    // Alias
+    @GetMapping(path = "/id/{id}/{name}")
+    public String testOne(@PathVariable String id, @PathVariable String name){
         System.out.println(id);
         System.out.println(name);
         return "Get Method One Invoke";
