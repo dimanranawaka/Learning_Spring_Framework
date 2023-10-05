@@ -8,7 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller("/customer")
 public class CustomerController {
     @GetMapping
-    public String test(){
+    public String testOne(){
+        //We can return any compatible data type with rest controllers
+        // no need of view resolvers
         return "Hello Customer";
+    }
+    @GetMapping
+    public String testTwo(){ // this is a duplicate(Ambiguous) mapping
+        return "Hello";
     }
 }
