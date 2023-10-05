@@ -27,7 +27,7 @@ public class OneController {
     }*/
 
     // Alias
-    @GetMapping(path = "/id/{id}/{name}")
+    @GetMapping(path = "/id/{id:[C]{1}[0-9]{3}}/{name:[A-Z]{4}}")
     public String testOne(@PathVariable String id, @PathVariable String name){
         System.out.println(id);
         System.out.println(name);
