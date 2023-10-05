@@ -19,4 +19,9 @@ public class TwoController {
     public String testOne1(){
         return "Method two Invoked";
     }
+
+    @GetMapping("/*/mypath/A")
+    public String testOne2(){
+        return "Method three Invoked";
+    }
 }
