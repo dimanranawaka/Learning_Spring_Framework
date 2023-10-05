@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FourController {
     // How many parts are there in an HTTP Request?
         // There are two parts
-            // Headers (Meta Data)
+            // Headers (Meta Data) "Content-Type=application/json"
             // Body(Context)
 
     // We can narrow down request using headers also
