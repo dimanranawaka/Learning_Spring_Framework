@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/one")
 public class OneController {
-    @GetMapping
+    //one/b
+    @GetMapping(path = "b")
     public String testOne(){
         return "Get Method One Invoke";
     }
+    //one/a
     @GetMapping(path = "/a")
     public String testTwo(){
-        return "Get Method One Invoke";
+        return "Get Method Two Invoke";
     }
 }
