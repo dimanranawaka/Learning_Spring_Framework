@@ -33,4 +33,11 @@ public class OneController {
         System.out.println(name);
         return "Get Method One Invoke";
     }
+
+    @GetMapping(path = "/id/{id:[C]{2}[0-9]{3}}/{name:[a-z]{5}}")
+    public String testOne1(@PathVariable String id, @PathVariable String name){
+        System.out.println(id);
+        System.out.println(name);
+        return "Get Method One Invoke";
+    }
 }
