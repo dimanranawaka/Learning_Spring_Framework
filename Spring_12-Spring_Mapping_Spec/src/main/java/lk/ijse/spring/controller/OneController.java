@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,13 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/one")
 public class OneController {
     //one/b
-    @GetMapping(path = "b")
+    /*@GetMapping(path = "z/b")
     public String testOne(){
         return "Get Method One Invoke";
     }
     //one/a
-    @GetMapping(path = "/a")
+    @GetMapping(path = "z/a")
     public String testTwo(){
         return "Get Method Two Invoke";
+    }*/
+    @GetMapping(path = "/id/{C001}/{Diman}")
+    public String testOne(@PathVariable("C001") String id, @PathVariable("Diman") String name){
+        System.out.println(id);
+        System.out.println(name);
+        return "Get Method One Invoke";
     }
 }
