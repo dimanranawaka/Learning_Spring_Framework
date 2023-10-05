@@ -24,4 +24,10 @@ public class TwoController {
     public String testOne2(){
         return "Method three Invoked";
     }
+    // In here : zero or any amount
+    @GetMapping("/**/mypath/A")
+    public String testOne3(){
+        return "Method four Invoked";
+    }
+
 }
