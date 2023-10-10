@@ -34,7 +34,7 @@ public class FourController {
     public String testOne(){
         return "Method one Invoked";
     }
-    @GetMapping(produces = {MediaType.TEXT_HTML_VALUE})
+    @GetMapping(produces = {MediaType.TEXT_HTML_VALUE},consumes = {MediaType.APPLICATION_JSON_VALUE})
     public String testTwo(){
         return "Method Two Invoked";
     }
