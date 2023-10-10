@@ -25,8 +25,11 @@ public class FourController {
         return "Method Two Invoked";
     }*/
 
-    // consumes = Content-Type=application/json
+    // consumes = Content-Type=application/json => Define what is the content type of the request
     // produce = Accept=> we want this type of response
+    // Accept is a default header and always set this head to *\* (all) - which means anything will be accepted from the
+    // server as the response
+
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public String testOne(){
         return "Method one Invoked";
