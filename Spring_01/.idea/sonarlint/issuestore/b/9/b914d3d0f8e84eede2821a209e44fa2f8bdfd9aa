@@ -1,0 +1,5 @@
+
+@	java:S106	"+Replace this use of System.out by a logger.(é«ûÍ
+@	java:S106"+Replace this use of System.out by a logger.(¹ì„å
+\
+java:S1128"FRemove this unused import 'org.springframework.core.annotation.Order'.(ÖŽ¨æ
