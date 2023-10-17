@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,14 @@ public class B_X_WWW_Url_Encoded_Controller {
         return "X-WWW-Form-URL-Encoded-Data1 : "+id+" "+name+" "+address;
     }
 
+    // If we have more from the front end we can use encapsulate object to fetch
+    // the data directly to the object
+    // here we can use @ModelAttribute annotation - this is known as a model attribute
+    // But is not a required annotation like @RequestParam
+    // Supporting data types (Query String & x-www-form-url-encoded)
+
     @PostMapping(path = "/aa")
-    public String receiveDataWithFormData(CustomerDTO dto){
+    public String receiveDataWithFormData(@ModelAttribute CustomerDTO dto){
         return "X-WWW-Form-URL-Encoded-Data : "+dto.getId()+" "+dto.getName()+" "+dto.getAddress()+" "+dto.getSalary()+
                 " "+dto.getTp();
     }
