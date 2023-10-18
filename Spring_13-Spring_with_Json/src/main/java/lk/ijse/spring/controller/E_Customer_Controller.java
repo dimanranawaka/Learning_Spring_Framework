@@ -11,10 +11,12 @@ import java.util.ArrayList;
 public class E_Customer_Controller {
     @PostMapping
     public ResponseUtil addCustomer(@RequestBody CustomerDTO dto){
+        if (dto.getId().equals("C001")) throw new RuntimeException("This Customer is a bad one!");
         return new ResponseUtil("Ok","Successfully Added",dto);
     }
     @DeleteMapping(params = "id")
     public ResponseUtil deleteCustomer(@RequestParam String id){
+        if (id.endsWith("C001")) throw new RuntimeException("This Customer can't be deleted!");
         return new ResponseUtil("Ok","Successfully Deleted",id);
     }
     @GetMapping(params = "id")
@@ -24,6 +26,7 @@ public class E_Customer_Controller {
     }
     @PutMapping
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
+        if (dto.getId().equals("C001")) throw new RuntimeException("This Customer is Can't be Updated!");
         return new ResponseUtil("Ok","Successfully Updated",dto);
     }
     @GetMapping
