@@ -1,9 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,5 +27,10 @@ public class D_Response_Controller {
         allCustomers.add(new CustomerDTO("C004","Dreed","Galle",70000.00,"125",null));
 
         return allCustomers;
+    }
+
+    @PutMapping
+    public CustomerDTO sameFrontEndDataAsResponse(@RequestBody CustomerDTO dto){
+        return dto;
     }
 }
