@@ -11,17 +11,8 @@ import java.util.ArrayList;
 public class E_Customer_Controller {
     @PostMapping
     public ResponseUtil addCustomer(@RequestBody CustomerDTO dto){
-
-        try {
-
             if (dto.getId().equals("C001")) throw new RuntimeException("This Customer is a bad one!");
             return new ResponseUtil("Ok","Successfully Added",dto);
-
-        }catch (RuntimeException e){
-
-            return new ResponseUtil("Error","Successfully not Added",dto);
-
-        }
     }
     @DeleteMapping(params = "id")
     public ResponseUtil deleteCustomer(@RequestParam String id){
