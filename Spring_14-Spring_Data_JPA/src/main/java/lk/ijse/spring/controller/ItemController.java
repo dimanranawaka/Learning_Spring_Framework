@@ -13,24 +13,5 @@ public class ItemController {
     @Autowired
     ItemRepo itemRepo;
 
-    @PostMapping
-    public String addItem(Item dao){
-        itemRepo.save(dao);
-        return "Item Successfully Added!";
-    }
 
-    @DeleteMapping
-    public String deleteItem(){
-        itemRepo.deleteById("I001");
-        return "Item deleted Successfully";
-    }
-
-    @GetMapping
-    public List<Item> getAllItem(){
-        return itemRepo.findAll();
-    }
-    @GetMapping(params = {"code"})
-    public Item searchItem(String code){
-       return itemRepo.findById(code).get();
-    }
 }
