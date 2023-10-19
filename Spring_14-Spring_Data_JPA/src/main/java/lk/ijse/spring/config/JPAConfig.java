@@ -26,10 +26,11 @@ public class JPAConfig {
     //Spring data jpa need a vendor to run ORM
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter vad){
+        // This is the Spring Data JPA main object which handles all the features
         LocalContainerEntityManagerFactoryBean factory= new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(ds);
         factory.setJpaVendorAdapter(vad);
-        factory.setPackagesToScan("lk.ijse.spring.entity");
+        factory.setPackagesToScan("lk.ijse.spring.entity"); // Set Entity records to Location to the Spring Data JPA
         return factory;
     }
 
