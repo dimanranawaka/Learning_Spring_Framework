@@ -29,4 +29,8 @@ public class ItemController {
     public List<Item> getAllItem(){
         return itemDAO.findAll();
     }
+    @GetMapping(params = {"code"})
+    public Item searchItem(String code){
+       return itemDAO.findById(code).get();
+    }
 }
