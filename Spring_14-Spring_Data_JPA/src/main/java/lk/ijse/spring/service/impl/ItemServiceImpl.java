@@ -26,16 +26,14 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public String addItem(ItemDTO dto) {
+    public void addItem(ItemDTO dto) {
         Item item = mapper.map(dto, Item.class);
         itemRepo.save(item);
-        return "Item Saved";
     }
 
     @Override
-    public String deleteItem(String id) {
+    public void deleteItem(String id) {
         itemRepo.deleteById(id);
-        return "Item deleted";
     }
 
     @Override
@@ -48,5 +46,11 @@ public class ItemServiceImpl implements ItemService {
     public ItemDTO searchItem(String code) {
         Item item = itemRepo.findById(code).get();
         return mapper.map(item,ItemDTO.class);
+    }
+
+    @Override
+    public void updateItem(ItemDTO dto) {
+        Item item = mapper.map(dto, Item.class);
+        itemRepo.save(item);
     }
 }

@@ -6,11 +6,13 @@ import lk.ijse.spring.entity.Item;
 import java.util.List;
 
 public interface ItemService {
-    String addItem(ItemDTO dto);
+    void addItem(ItemDTO dto);
 
-    String deleteItem(String id);
+    void deleteItem(String id);
 
     List<Item> getAllItem();
 
     ItemDTO searchItem(String code);
+
+    void updateItem(ItemDTO dto);
 }
