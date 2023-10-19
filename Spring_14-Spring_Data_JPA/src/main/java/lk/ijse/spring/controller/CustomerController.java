@@ -4,9 +4,9 @@ import lk.ijse.spring.dao.CustomerDAO;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
@@ -17,5 +17,15 @@ public class CustomerController {
     @PostMapping
     public void addCustomer(Customer customer){
         customerDAO.save(customer);
+    }
+    @DeleteMapping
+    public String deleteCustomer(){
+        customerDAO.deleteById("C001");
+        return "Customer Deleted Successfully";
+    }
+
+    @GetMapping
+    public List<Customer> getAllCustomer(){
+        return customerDAO.findAll();
     }
 }
