@@ -3,6 +3,7 @@ package lk.ijse.spring.controller;
 import lk.ijse.spring.dao.CustomerDAO;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Customer;
+import org.hibernate.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,4 +29,9 @@ public class CustomerController {
     public List<Customer> getAllCustomer(){
         return customerDAO.findAll();
     }
+    @GetMapping(params = {"id"})
+    public Customer searchCustomer(String id){
+        return customerDAO.findById(id).get();
+    }
+
 }
