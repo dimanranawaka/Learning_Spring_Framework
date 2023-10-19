@@ -18,7 +18,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "lk.ijse.spring.dao") // should link where we are going to write our queries
+@EnableJpaRepositories(basePackages = "lk.ijse.spring.repo") // should link where we are going to write our queries
 @EnableTransactionManagement // AOP -> use the transaction manager to manage transaction
 public class JPAConfig {
 
