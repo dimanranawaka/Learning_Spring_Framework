@@ -7,4 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ItemServiceImpl implements ItemService {
+    public ItemServiceImpl() {
+        System.out.println("ItemServiceImpl : Instantiated");
+    }
 }
