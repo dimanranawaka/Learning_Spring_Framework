@@ -9,7 +9,11 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
+<<<<<<< HEAD
 
+=======
+import java.sql.DriverManager;
+>>>>>>> origin/master
 
 
 @Configuration
