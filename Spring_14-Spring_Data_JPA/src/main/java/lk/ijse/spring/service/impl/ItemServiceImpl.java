@@ -1,10 +1,10 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.service.CustomerBO;
+import lk.ijse.spring.service.ItemService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional // Manage all the transactions here
-public class CustomerBOImpl implements CustomerBO {
+@Transactional
+public class ItemServiceImpl implements ItemService {
 }
