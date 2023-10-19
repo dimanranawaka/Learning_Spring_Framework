@@ -18,8 +18,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "lk.ijse.spring.dao")
-@EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "lk.ijse.spring.dao") // should link where we are going to write our queries
+@EnableTransactionManagement // AOP -> use the transaction manager to manage transaction
 public class JPAConfig {
 
     //data base access (username,password,name,url)
@@ -47,10 +47,10 @@ public class JPAConfig {
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
         HibernateJpaVendorAdapter va= new HibernateJpaVendorAdapter();
-        va.setDatabase(Database.MYSQL);
-        va.setGenerateDdl(true);
-        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
-        va.setShowSql(true);
+        va.setDatabase(Database.MYSQL); // What is the DB
+        va.setGenerateDdl(true); // Data definition language enable
+        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect"); // platform version
+        va.setShowSql(true); // if you wanted to see generated sql
         return va;
     }
 
