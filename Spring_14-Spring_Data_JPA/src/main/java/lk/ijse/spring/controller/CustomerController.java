@@ -2,6 +2,7 @@ package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CustomerService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,26 +15,28 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
     @PostMapping
-    public String addCustomer(CustomerDTO dto){
+    public ResponseUtil addCustomer(CustomerDTO dto){
         customerService.addCustomer(dto);
-        return  "Customer Added!";
+        return new ResponseUtil("Ok","Successfully Added",dto);
     }
     @GetMapping
-    public List<CustomerDTO> getAllCustomers(){
-        return customerService.getAllCustomer();
+    public ResponseUtil getAllCustomers(){
+        List<CustomerDTO> allCustomer = customerService.getAllCustomer();
+        return new ResponseUtil("Ok","Successfully Got them",allCustomer);
     }
     @PutMapping
-    public String updateCustomer(@RequestBody CustomerDTO dto){
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
         customerService.updateCustomer(dto);
-        return "Customer "+dto.getId()+" is updated!";
+        return new ResponseUtil("Ok","Successfully Updated",dto);
     }
     @DeleteMapping
-    public String deleteCustomer(String id){
+    public ResponseUtil deleteCustomer(String id){
         customerService.deleteCustomer(id);
-        return "Customer "+id+" is deleted!";
+        return new ResponseUtil("Ok","Successfully Deleted",id);
     }
     @GetMapping(params = "id")
-    public CustomerDTO searchCustomer(String id){
-       return customerService.searchCustomer(id);
+    public ResponseUtil searchCustomer(String id){
+        CustomerDTO customerDTO = customerService.searchCustomer(id);
+        return new ResponseUtil("Ok","Found It",customerDTO);
     }
 }
