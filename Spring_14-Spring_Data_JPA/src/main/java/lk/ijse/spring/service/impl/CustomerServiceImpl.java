@@ -28,6 +28,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(CustomerDTO customerDTO) {
+        if (customerRepo.existsById(customerDTO.getId())) {
+            throw new RuntimeException(customerDTO.getId()+" is already exists please insert new customer");
+        }
+
         Customer customer = modelMapper.map(customerDTO, Customer.class);
         // First parameter = source
         // Second parameter = Type you want to convert
@@ -47,13 +51,20 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO searchCustomer(String id) {
+        if (customerRepo.existsById(id)) {
+            throw new RuntimeException("This id is not available");
+        }
         Customer customer = customerRepo.findById(id).get();
         return modelMapper.map(customer,CustomerDTO.class);
     }
 
     @Override
-    public void updateCustomer(CustomerDTO c) {
-        Customer customer = modelMapper.map(c, Customer.class);
+    public void updateCustomer(CustomerDTO dto) {
+        if (!customerRepo.existsById(dto.getId())) {
+            throw new RuntimeException(dto.getId()+" is not exists!");
+        }
+
+        Customer customer = modelMapper.map(dto, Customer.class);
         customerRepo.save(customer);
     }
 }

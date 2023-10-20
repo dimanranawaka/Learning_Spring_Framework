@@ -27,12 +27,18 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public void addItem(ItemDTO dto) {
+        if (itemRepo.existsById(dto.getCode())) {
+            throw new RuntimeException(dto.getCode()+" is already exists please insert new Item");
+        }
         Item item = mapper.map(dto, Item.class);
         itemRepo.save(item);
     }
 
     @Override
     public void deleteItem(String id) {
+        if (!itemRepo.existsById(id)){
+            throw new RuntimeException(id+" is already exists deleted or not available!");
+        }
         itemRepo.deleteById(id);
     }
 
@@ -44,12 +50,19 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public ItemDTO searchItem(String code) {
+        if (!itemRepo.existsById(code)) {
+            throw new RuntimeException(code+" is not exists!");
+        }
         Item item = itemRepo.findById(code).get();
         return mapper.map(item,ItemDTO.class);
     }
 
     @Override
     public void updateItem(ItemDTO dto) {
+        if (!itemRepo.existsById(dto.getCode())) {
+            throw new RuntimeException(dto.getCode()+" is not exists. Please insert correct Item Code!");
+        }
+
         Item item = mapper.map(dto, Item.class);
         itemRepo.save(item);
     }
