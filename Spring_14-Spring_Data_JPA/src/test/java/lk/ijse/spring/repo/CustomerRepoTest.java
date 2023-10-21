@@ -38,4 +38,9 @@ class CustomerRepoTest {
         Customer matara = customerRepo.findCustomerByAddress("Matara");
         System.out.println(matara.toString());
     }
+    @Test
+    public void queryMethodTwo(){
+        Customer byAddressAndName = customerRepo.findByAddressAndName("Matara", "Diman");
+        System.out.println(byAddressAndName.toString());
+    }
 }
