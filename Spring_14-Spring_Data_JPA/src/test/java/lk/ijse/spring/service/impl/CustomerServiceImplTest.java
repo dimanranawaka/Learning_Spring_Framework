@@ -1,7 +1,7 @@
-package lk.ijse.spring.repo;
+package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.config.WebRootConfig;
-import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.service.CustomerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,27 +10,33 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.*;
 @WebAppConfiguration
 @ContextConfiguration(classes = {WebRootConfig.class})
 @ExtendWith(SpringExtension.class)
 @Transactional
-class CustomerRepoTest {
+class CustomerServiceImplTest {
 
     @Autowired
-    CustomerRepo customerRepo;
+    CustomerService customerService;
+    @Test
+    void addCustomer() {
+//        customerService.addCustomer();
+    }
 
     @Test
-     public void testGetAllCustomer(){
-        List<Customer> all = customerRepo.findAll();
-        for (Customer customer : all) {
-            System.out.println(customer.toString());
-        }
+    void deleteCustomer() {
     }
+
     @Test
-    public void testAddCustomer(){
-        Customer customer = new Customer("C004", "Ravindu", "Galle", new BigDecimal(500000));
-        customerRepo.save(customer);
+    void getAllCustomer() {
+    }
+
+    @Test
+    void searchCustomer() {
+    }
+
+    @Test
+    void updateCustomer() {
     }
 }
