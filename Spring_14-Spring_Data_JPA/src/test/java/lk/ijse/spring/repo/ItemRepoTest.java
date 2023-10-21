@@ -42,4 +42,12 @@ class ItemRepoTest {
         Item byQtyOnHandAndUnitPrice = repo.findByQtyOnHandAndUnitPrice(60, new BigDecimal(50000));
         System.out.println(byQtyOnHandAndUnitPrice.toString());
     }
+    @Test
+    public void queryMethodThree(){
+        List<Item> allItems = repo.getAll_Items();
+
+        for (Item allItem : allItems) {
+            System.out.println(allItem.toString());
+        }
+    }
 }
