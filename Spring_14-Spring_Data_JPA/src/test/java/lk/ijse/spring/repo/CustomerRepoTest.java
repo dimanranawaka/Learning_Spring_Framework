@@ -33,4 +33,9 @@ class CustomerRepoTest {
         Customer customer = new Customer("C004", "Ravindu", "Galle", new BigDecimal(500000));
         customerRepo.save(customer);
     }
+    @Test
+    public void queryMethodOne(){
+        Customer matara = customerRepo.findCustomerByAddress("Matara");
+        System.out.println(matara.toString());
+    }
 }
