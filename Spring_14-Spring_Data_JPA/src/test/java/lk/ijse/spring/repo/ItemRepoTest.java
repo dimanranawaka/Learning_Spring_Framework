@@ -31,4 +31,15 @@ class ItemRepoTest {
         Item item = new Item("I004", "MK14", 60, new BigDecimal(50000));
         repo.save(item);
     }
+
+    @Test
+    public void queryMethodOne(){
+        Item byQtyOnHand = repo.findByQtyOnHand(60);
+        System.out.println(byQtyOnHand.toString());
+    }
+    @Test
+    public void queryMethodTwo(){
+        Item byQtyOnHandAndUnitPrice = repo.findByQtyOnHandAndUnitPrice(60, new BigDecimal(50000));
+        System.out.println(byQtyOnHandAndUnitPrice.toString());
+    }
 }
