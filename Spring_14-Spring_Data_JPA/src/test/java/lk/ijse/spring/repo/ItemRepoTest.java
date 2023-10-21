@@ -9,10 +9,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.math.BigDecimal;
 import java.util.List;
-@WebAppConfiguration
-@ContextConfiguration(classes = {WebRootConfig.class})
-@ExtendWith(SpringExtension.class)
+@WebAppConfiguration // Create testing context
+@ContextConfiguration(classes = {WebRootConfig.class}) // Load the configurations which wanted for test context
+@ExtendWith(SpringExtension.class) // We have to use Jupiter with Spring Test as a vendor
 class ItemRepoTest {
     @Autowired
     ItemRepo repo;
@@ -22,5 +23,10 @@ class ItemRepoTest {
         for (Item item : all) {
             System.out.println(item.toString());
         }
+    }
+    @Test
+    public void addItem(){
+        Item item = new Item("I004", "MK14", 60, new BigDecimal(50000));
+        repo.save(item);
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.math.BigDecimal;
 import java.util.List;
 @WebAppConfiguration
 @ContextConfiguration(classes = {WebRootConfig.class})
@@ -19,11 +20,15 @@ class CustomerRepoTest {
     CustomerRepo customerRepo;
 
     @Test
-    public void testGetAllCustomer(){
+     public void testGetAllCustomer(){
         List<Customer> all = customerRepo.findAll();
         for (Customer customer : all) {
             System.out.println(customer.toString());
         }
     }
-
+    @Test
+    public void testAddCustomer(){
+        Customer customer = new Customer("C004", "Ravindu", "Galle", new BigDecimal(500000));
+        customerRepo.save(customer);
+    }
 }
