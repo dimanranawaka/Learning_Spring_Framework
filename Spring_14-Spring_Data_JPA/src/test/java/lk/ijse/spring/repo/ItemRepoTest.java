@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
 @WebAppConfiguration // Create testing context
 @ContextConfiguration(classes = {WebRootConfig.class}) // Load the configurations which wanted for test context
 @ExtendWith(SpringExtension.class) // We have to use Jupiter with Spring Test as a vendor
+@Transactional // This will make sure test Item will not save to the db and also is it functional
 class ItemRepoTest {
     @Autowired
     ItemRepo repo;
