@@ -15,6 +15,7 @@ public class AppConfig {
 
     @Bean
     public BasicDataSource basicDataSource(){
+
         return new BasicDataSource(); // returning that class object constructor
     }
 
